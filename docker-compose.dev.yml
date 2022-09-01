@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  flip-db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: db
+      POSTGRES_USER: db
+      POSTGRES_DB: db
+  
+  flip-redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+networks:
+  main:

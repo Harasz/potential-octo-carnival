@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@flip/cache": ["libs/cache/src/index.ts"],
+      "@flip/client": ["libs/client/src/index.ts"],
+      "@flip/config": ["libs/config/src/index.ts"],
+      "@flip/db-client": ["libs/db-client/src/index.ts"]
+    },
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "tmp"]
 }

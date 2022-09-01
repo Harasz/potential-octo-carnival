@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Profitable {
+  id    String  @id @unique @db.VarChar(24)
+  value Decimal @db.Money
+}
+
+model OftenBought {
+  id         String   @id @unique @db.VarChar(35)
+  product_id String   @db.VarChar(3000)
+  ordered    Int
+  date       DateTime @db.Date
+
+  @@index([product_id])
+}
